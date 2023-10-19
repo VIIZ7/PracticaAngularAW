@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import{RouterModule, Routes} from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -21,11 +19,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MenuComponent } from './menu/menu.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { FormsModule } from '@angular/forms';
+
 
 const appRoutes: Routes=[
   {path:'inicio',component:InicioComponent},
+  {path:'login',component:LoginComponent},
   {path:'nosotros',component:NosotrosComponent},
-{path:'menu', component:MenuComponent}
+  {path:'menu', component:MenuComponent}
 ]
 
 @NgModule({
@@ -42,6 +43,7 @@ const appRoutes: Routes=[
       {enableTracing:true}
     ),
     BrowserModule,
+    FormsModule,
     MatSidenavModule,
     MatListModule,
     MatLineModule,
@@ -58,6 +60,6 @@ const appRoutes: Routes=[
     MatNativeDateModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
