@@ -20,13 +20,16 @@ import { MenuComponent } from './menu/menu.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
-
+import { alumnosComponent } from './alumnos/alumnos.component';
+import { MatTableModule } from '@angular/material/table';
 
 const appRoutes: Routes=[
   {path:'inicio',component:InicioComponent},
   {path:'login',component:LoginComponent},
   {path:'nosotros',component:NosotrosComponent},
-  {path:'menu', component:MenuComponent}
+  {path:'menu', component:MenuComponent},
+  {path:'alumnos', component:alumnosComponent}
+
 ]
 
 @NgModule({
@@ -35,8 +38,10 @@ const appRoutes: Routes=[
     InicioComponent,
     NosotrosComponent,
     LoginComponent,
+    alumnosComponent,
     MenuComponent
   ],
+
   imports: [
     RouterModule.forRoot(
       appRoutes,
@@ -48,7 +53,7 @@ const appRoutes: Routes=[
     MatListModule,
     MatLineModule,
     MatInputModule,
-    MatFormFieldModule,
+    MatTableModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -57,7 +62,7 @@ const appRoutes: Routes=[
     MatButtonModule,
     MatCardModule,
     MatDatepickerModule, 
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
