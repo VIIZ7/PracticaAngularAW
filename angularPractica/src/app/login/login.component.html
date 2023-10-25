@@ -1,14 +1,23 @@
-<div>
-    <h2>Login</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+
+<form id="accesspanel" action="login" method="post">
+  <h1 id="litheader">ARASAKA</h1>
+  <div class="inset">
+    <p>
+      <input type="text" name="username" id="email" placeholder="Usuario">
+    </p>
+    <p>
+      <input type="password" name="password" id="password" placeholder="Password">
+    </p>
+    <div style="text-align: center;">
+      <div class="checkboxouter">
+        <input type="checkbox" name="rememberme" id="remember" value="Remember">
+        <label class="checkbox"></label>
       </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="password" required>
-      </div>
-      <button type="submit">Login</button>
-    </form>
+      <label for="remember">Recordar este dispositivo</label>
+    </div>
+    <input class="loginLoginValue" type="hidden" name="service" value="login" />
   </div>
+  <p class="p-container">
+    <input type="submit"  routerLink="/inicio" name="Login" id="go" value="Authorizado">
+  </p>
+</form>
